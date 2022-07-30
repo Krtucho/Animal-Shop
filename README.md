@@ -190,6 +190,7 @@ $ POST localhost:3000/shops/:id/animals?price=0.1&amount=4&breedId=1
 
 # Un Person compra de la tienda(id) un Animal
 POST localhost:3000/shops/:id/buy?animalId=1&amount=1&petName=nombre_opcional
+# Authorization: Bearer Token
 ```
 Aclaraciones
 ```
