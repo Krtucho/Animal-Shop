@@ -202,5 +202,5 @@ Si se compran la cantidad de mascotas que existen en amount de cierto animal, es
 
 ## Stay in touch
 
-- Author - [Krtucho]
+- Author - Krtucho
 - Telegram - [Krtucho](https://t.me/Krtucho)
