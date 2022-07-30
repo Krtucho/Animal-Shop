@@ -24,7 +24,8 @@
 
 ## Description
 
-Jsonwebtoken para la seguridad, sequelize el orm para mysql, express js,
+Jsonwebtoken para la seguridad, sequelize el orm para mysql, express js
+
 Breed: {
     name: ""
 }
@@ -95,16 +96,111 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Paths
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Breeds
+```bash
+# Devuelve todos los breeds
+$ GET localhost:3000/breeds
+
+# Obtiene un breed por su id
+$ GET localhost:3000/breeds/:id
+
+# Busca un breed que contenga en su nombre a search
+$ GET localhost:3000/breeds?search="argumento_opcional"
+
+# Crea un Breed
+$ POST localhost:3000/breeds
+# Body
+# name: string;
+
+# Elimina un breed por su id
+$ DELETE localhost:3000/breeds/:id
+
+# Modifica un breed por su id. Este fue el unico ejemplo que puse de modificar, para ahorrar tiempo, en los demas casos el procedimiento seria parecido
+$ PATCH localhost:3000/breeds/:id
+# Body
+# name: string;
+
+```
+Person-Auth
+```bash
+# Registra a un nuevo usuario
+$ POST localhost:3000/auth/signup
+# Body
+# name?: string;
+# username: string;
+# password: string;
+
+# Loguea a un nuevo usuario
+$ POST localhost:3000/auth/signin
+# Body
+# username: string;
+# password: string;
+
+# Sube una imagen para foto de perfil del usuario, la ruta se establece en la propiedad img
+$ POST localhost:3000/auth/person/upload
+# Authorization: Bearer Token
+# Body
+# file -> File
+```
+Pets
+```bash
+# Devuelve todos los pets que pertenecen a cierto person
+$ GET localhost:3000/pets
+# Authorization: Bearer Token
+
+# Busca un pet que pertenezca a cierto person y contenga en su nombre a search
+$ GET localhost:3000/pets?search="argumento_opcional"
+# Authorization: Bearer Token
+
+$ GET localhost:3000/pets/:id
+# Authorization: Bearer Token
+```
+Shops-Person buy-Animals Create
+```bash
+# Devuelve todos los shops
+$ GET localhost:3000/shops
+
+# Obtiene un shop por su id
+$ GET localhost:3000/shops/:id
+
+# Busca un shop que contenga en su nombre a search
+$ GET localhost:3000/shops?search="argumento_opcional"
+
+# Crea un Shop
+$ POST localhost:3000/shops
+# Body
+# name: string;
+
+# Elimina un Shop por su id
+$ DELETE localhost:3000/shops/:id
+
+# Devuelve todos los Animals que pertenezcan a esta tienda(id)
+$ GET localhost:3000/shops/:id/animals
+
+# Busca un animal que se encuentre en esta tienda(id), contenga un precio menor que price y exista en la tienda una cantidad mayor que amount 
+$ GET localhost:3000/shops:id/animals?price="0.1"&amount=2
+# Ambos argumentos son opcionales
+
+# Agrega un Animal a esta tienda(id)
+$ POST localhost:3000/shops/:id/animals?price=0.1&amount=4&breedId=1
+# Los 3 argumentos son requeridos
+# breedId -> Id del Breed
+
+# Un Person compra de la tienda(id) un Animal
+POST localhost:3000/shops/:id/buy?animalId=1&amount=1&petName=nombre_opcional
+```
+Aclaraciones
+```
+Al comprar un animal en la tienda solamente se podra comprar 1, ya que el usuario tendria que ponerle nombres a todas a la vez en otro caso y en el nuestro aceptamos solamente 1 nombre. Esto lo resolvi de esta forma porque no me quedo del todo claro eso en la orden, pero en caso de necesidad de cambio, no seria tan complicado ajustarlo para varios animales.
+
+Si se compran la cantidad de mascotas que existen en amount de cierto animal, este es removido de la tienda y de la base de datos. Esto tampoco me quedo claro del todo en la orden, pero vi esta via como la que mas se ajustaba al problema que se queria representar.
+```
+
+
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Krtucho]
+- Telegram - [Krtucho](https://t.me/Krtucho)
