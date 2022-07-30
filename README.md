@@ -142,7 +142,7 @@ $ POST localhost:3000/auth/signin
 $ POST localhost:3000/auth/person/upload
 # Authorization: Bearer Token
 # Body
-# file -> File
+# file: File
 ```
 Pets
 ```bash
