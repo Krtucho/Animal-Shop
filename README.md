@@ -24,7 +24,44 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Jsonwebtoken para la seguridad, sequelize el orm para mysql, express js,
+Breed: {
+    name: ""
+}
+
+
+Person:{
+    name: "" 
+    username: "" +
+    password: "" ** +
+    photo: img
+}
+
+Pet:{
+    name: ""
+    BreedId: Breed +
+    OwnerId: Person +
+}
+
+Shop:{
+    name: ""
+}
+
+Animal: {
+    ShopId: Shop
+    BreedId: Breed
+    price: 12.45
+    amount: 5
+}
+
+
+las tiendas tienen animales, y los venden a un precio,
+los animales tienen asociada una raza
+los Usuarios compran animales y se convierten en sus mascotas
+
+los usuario tienen foto.
+
+para consumir el servicio de compra el usuario debe estar logueado
 
 ## Installation
 
