@@ -95,7 +95,9 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
+## Base de datos
+PostgreSQL
+El archivo de configuracion se encuentra en src/config
 ## Paths
 
 Breeds
@@ -154,6 +156,7 @@ $ GET localhost:3000/pets
 $ GET localhost:3000/pets?search="argumento_opcional"
 # Authorization: Bearer Token
 
+# Busca un pet que pertenezca a cierto person por su id(id del pet)
 $ GET localhost:3000/pets/:id
 # Authorization: Bearer Token
 ```
