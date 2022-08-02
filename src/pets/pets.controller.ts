@@ -20,7 +20,10 @@ export class PetsController {
     }
 
     @Get('/:id')
-    getPetById(@Param('id', ParseIntPipe) id: number): Promise<Pet>{
-        return this.petsSerice.getPetById(id);
+    getPetById(
+    @Param('id', ParseIntPipe) id: number,
+    @GetPerson() person:Person,
+    ): Promise<Pet>{
+        return this.petsSerice.getPetById(id, person.id);
     }
 }
