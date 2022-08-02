@@ -21,8 +21,8 @@ export class PetsService {
         return this.petRepository.getPets(filterDto, person);
     }
 
-    async getPetById(id: number):Promise<Pet>{
-        const found = await this.petRepository.findOneBy({id});
+    async getPetById(id: number, ownerId:number):Promise<Pet>{
+        const found = await this.petRepository.findOneBy({id, ownerId});
 
         if(!found){
             throw new NotFoundException(`Breed with ID "${id}" not found`)
