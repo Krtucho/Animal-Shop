@@ -200,6 +200,8 @@ Aclaraciones
 Al comprar un animal en la tienda solamente se podra comprar 1, ya que el usuario tendria que ponerle nombres a todas a la vez en otro caso y en el nuestro aceptamos solamente 1 nombre. Esto lo resolvi de esta forma porque no me quedo del todo claro eso en la orden, pero en caso de necesidad de cambio, no seria tan complicado ajustarlo para varios animales.
 
 Si se compran la cantidad de mascotas que existen en amount de cierto animal, este es removido de la tienda y de la base de datos. Esto tampoco me quedo claro del todo en la orden, pero vi esta via como la que mas se ajustaba al problema que se queria representar.
+
+Cuando un usuario compra un animal, se creara un pet con el nombre que la persona le puso y se restara 1 a la cantidad de animales de este tipo en la tienda.
 ```
 
 
